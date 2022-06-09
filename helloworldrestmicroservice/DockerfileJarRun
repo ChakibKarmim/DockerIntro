@@ -1,0 +1,8 @@
+FROM openjdk:11-jre-slim
+LABEL maintainer="Karmim chakib"
+
+ADD ["target/dependency", "/work/target"]
+ADD ["target/helloworldrestmicroservice-1.0-SNAPSHOT.jar" , "/work/target"]
+
+EXPOSE 8080
+ENTRYPOINT ["java", "-cp", "target/helloworldrestmicroservice-1.0-SNAPSHOT.jar", "com.kumuluz.ee.EeApplication"]
